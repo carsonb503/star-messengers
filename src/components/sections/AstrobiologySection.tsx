@@ -1,6 +1,5 @@
 import { Dna, Rocket, Globe2, Microscope } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
-import Quiz from '../Quiz';
 
 const AstrobiologySection = () => {
   const implications = [
@@ -88,20 +87,6 @@ const AstrobiologySection = () => {
             </div>
           </div>
         </ScrollReveal>
-
-        {/* Quiz Section */}
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-              Test Your Knowledge
-            </h3>
-            <p className="text-muted-foreground">
-              See how much you've learned about interstellar objects.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <Quiz />
 
         {/* Closing */}
         <ScrollReveal>

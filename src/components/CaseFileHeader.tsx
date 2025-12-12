@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { Button } from './ui/button';
 
 interface CaseFileHeaderProps {
   caseNumber: string;
@@ -7,9 +10,10 @@ interface CaseFileHeaderProps {
   subtitle: string;
   year: string;
   status?: 'confirmed' | 'mysterious' | 'ongoing';
+  learnMoreLink?: string;
 }
 
-const CaseFileHeader = ({ caseNumber, title, subtitle, year, status = 'confirmed' }: CaseFileHeaderProps) => {
+const CaseFileHeader = ({ caseNumber, title, subtitle, year, status = 'confirmed', learnMoreLink }: CaseFileHeaderProps) => {
   const statusColors = {
     confirmed: 'text-cosmic-green bg-cosmic-green/10 border-cosmic-green/30',
     mysterious: 'text-secondary bg-secondary/10 border-secondary/30',
@@ -48,13 +52,21 @@ const CaseFileHeader = ({ caseNumber, title, subtitle, year, status = 'confirmed
           </p>
         </div>
 
-        <div className="flex flex-col items-start md:items-end gap-2">
+        <div className="flex flex-col items-start md:items-end gap-3">
           <span className="text-5xl md:text-6xl font-display font-light text-muted-foreground/30">
             {year}
           </span>
           <span className={`px-3 py-1 text-xs font-mono tracking-wider rounded-full border ${statusColors[status]}`}>
             {statusLabels[status]}
           </span>
+          {learnMoreLink && (
+            <Button asChild variant="outline" size="sm" className="mt-2">
+              <Link to={learnMoreLink}>
+                Learn More
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </ScrollReveal>

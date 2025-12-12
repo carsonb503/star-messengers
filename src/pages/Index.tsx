@@ -6,6 +6,7 @@ import OumuamuaSection from '@/components/sections/OumuamuaSection';
 import BorisovSection from '@/components/sections/BorisovSection';
 import AtlasSection from '@/components/sections/AtlasSection';
 import AstrobiologySection from '@/components/sections/AstrobiologySection';
+import ProjectBackgroundSection from '@/components/sections/ProjectBackgroundSection';
 import SectionDivider from '@/components/SectionDivider';
 
 const Index = () => {
@@ -33,6 +34,8 @@ const Index = () => {
           <AtlasSection />
           <SectionDivider />
           <AstrobiologySection />
+          <SectionDivider />
+          <ProjectBackgroundSection />
         </main>
 
         <footer className="relative z-10 py-12 px-6 border-t border-border/30">
